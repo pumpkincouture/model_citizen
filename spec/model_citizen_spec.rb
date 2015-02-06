@@ -1,30 +1,34 @@
 require 'spec_helper'
 
 describe ModelCitizen do
-  context "validating first and last name attributes" do
-    it "should return true if employee first and last name is valid" do
-      first_name_validator = ModelCitizen.valid_name?("Sylwia", "Olak")
+  context "checking attributes for nil or empty values" do
+    it "should return true if no attributes are nil or empty" do
+      first_name_validator = ModelCitizen.not_nil_or_empty?(["Sylwia", "Olak", "solak", "admin"])
       expect(first_name_validator).to eq(true)
     end
 
-    it "should return false if employee first name is empty string" do
-      first_name_validator = ModelCitizen.valid_name?("", "Olak")
+    it "should return false if there are nil attributes" do
+      first_name_validator = ModelCitizen.not_nil_or_empty?(["Sylwia", "Olak", nil, "admin"])
       expect(first_name_validator).to eq(false)
     end
 
-    it "should return false if employee last name is nil" do
-      first_name_validator = ModelCitizen.valid_name?("Sylwia", nil)
+    it "should return false if there are empty string attributes" do
+      first_name_validator = ModelCitizen.not_nil_or_empty?(["Sylwia", "Olak", "solak", ""])
       expect(first_name_validator).to eq(false)
     end
+  end
 
-    it "should return false if employee last name and first name are nil" do
-      first_name_validator = ModelCitizen.valid_name?(nil, nil)
-      expect(first_name_validator).to eq(false)
+  context "validating whether or not attribute contains a value" do
+    it "should return true if selected attribute matches value argument" do
+      employee_type = "admin"
+      type_validator = ModelCitizen.value_included?(employee_type, "admin")
+      expect(type_validator).to eq(true)
     end
 
-    it "should return false if employee last name and first name are empty" do
-      first_name_validator = ModelCitizen.valid_name?("", "")
-      expect(first_name_validator).to eq(false)
+    it "should return false if selected attribute does not match value argument" do
+      employee_type = "uncool"
+      type_validator = ModelCitizen.value_included?(employee_type, "admin")
+      expect(type_validator).to eq(false)
     end
   end
 end

@@ -1,8 +1,11 @@
 require "model_citizen/version"
 
 module ModelCitizen
-  def self.valid_name?(first_name, last_name)
-    !first_name.nil? && !first_name.empty? &&
-    !last_name.nil? && !last_name.empty?
+  def self.not_nil_or_empty?(attributes)
+    !attributes.include?(nil) && !attributes.include?("")
+  end
+
+  def self.value_included?(attribute, value)
+    [value].include? attribute
   end
 end
