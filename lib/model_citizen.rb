@@ -5,7 +5,7 @@ module ModelCitizen
     !attributes.include?(nil) && !attributes.include?("")
   end
 
-  def self.value_included?(attribute, value)
-    [value].include? attribute
+  def self.value_included?(*value, attribute)
+    [*value].include? attribute
   end
 end
