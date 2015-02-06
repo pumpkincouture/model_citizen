@@ -1,6 +1,6 @@
 # ModelCitizen
 
-TODO: Write a gem description
+Provides validation methods to LumberYard Sinatra app and LumberYard command line app models.
 
 ## Installation
 
@@ -17,10 +17,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install model_citizen
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 

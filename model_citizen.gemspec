@@ -9,7 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sylwia Olak"]
   spec.email         = ["pumpkincouture@gmail.com"]
   spec.summary       = %q{Provides validation methods for models in the LumberYard Sinatra app and command line application.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
