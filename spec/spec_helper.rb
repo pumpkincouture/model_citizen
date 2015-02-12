@@ -1,4 +1,3 @@
-require 'model_citizen'
 require 'model_citizen/messages'
 require 'model_citizen/validations'
 
