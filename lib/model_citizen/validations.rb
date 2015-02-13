@@ -14,6 +14,10 @@ module ModelCitizen
       valid_string?(date) && past_date?(date)
     end
 
+    def get_this_month
+      Date.today.month.to_s
+    end
+
     def no_duplicates?(value, data_structure)
       !data_structure.include? value
     end
