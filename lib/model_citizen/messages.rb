@@ -14,6 +14,7 @@ module ModelCitizen
                    "client_success" => "Client has been saved",
                    "employee_success" => "Employee has been saved",
                    "invalid_choice" => "That is not a valid choice, please try again",
+                   "enter_billing_type" => "Please enter project type",
                    "enter_employee_first" => "Please enter employee first name",
                    "enter_employee_last" => "Please enter employee last name",
                    "enter_employee_username" => "Please enter employee username",
